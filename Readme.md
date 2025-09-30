@@ -1,4 +1,4 @@
-# Auth App 2
+# Auth App 2 (Development Phase)
 
 ## I have installed libraries :- 
 - nodemon (server)
