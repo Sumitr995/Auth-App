@@ -1,5 +1,13 @@
 # Auth App 2 (Development Phase)
 
+## Features :- 
+- Register
+- Login 
+- logOut 
+- Reset Password
+- Email Verification
+- JWT Auth
+
 ## I have installed libraries :- 
 - nodemon (server)
 - express (API handling)
