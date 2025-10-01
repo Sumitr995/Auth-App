@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import cookieParser from 'cookie-parser';
 import ConnectDB from './config/DB.js';
+import authRoutes from './routes/authRoutes.js'
 
 
 const app = express();
@@ -15,9 +16,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({credentials:true}));
 
+// API Endpoints
 app.get('/', (req, res) => {
   res.send('APP is running 🚀');
 });
+app.use('/api/auth', authRoutes )
+
 
 
 
