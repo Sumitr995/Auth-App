@@ -1,8 +1,12 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import userModel from "../models/userModel.js";
+import transporter from "../config/nodemailer.js";
 
 // Functions to control Register, Login, Logout etc
+
+
+// register
 
 export const register = async (req, res) => {
   let { name, email, password } = req.body;
@@ -32,6 +36,20 @@ export const register = async (req, res) => {
       samesite: process.env.NODE_ENV == "Production" ? "none" : "strict",
       maxAge: 7 * 24 * 60 * 60 * 1000, // converted in ms
     });
+
+      // confirmation mail functionality 
+
+    const mailOptions = {
+      from: process.env.SENDER_EMAIL,
+      to: email,
+      subject:"Welcome to Sumit's Auth App",
+      text:`
+        Hello ${name} !,
+        Welcome to Sumit's Auth App. Your Account has been created with email id: ${email}.
+      `
+    }
+
+    await transporter.sendMail(mailOptions);
 
     return res.json({ success: true });
   } catch (error) {
@@ -70,6 +88,7 @@ export const login = async (req, res) => {
     });
     
     return res.json({ success: true, message:"You Logged In !!" });
+
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
