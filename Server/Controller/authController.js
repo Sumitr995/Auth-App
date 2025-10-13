@@ -121,7 +121,7 @@ export const sendVerifyOtp = async (req, res)=>{
 
   try {
 
-    const {userId} = req.body; 
+    const userId = req.user.id; 
 
     const user = await userModel.findById(userId)
 
@@ -161,10 +161,15 @@ export const sendVerifyOtp = async (req, res)=>{
 
 export const verifyEmail = async (req, res)=>{
 
-  const {userId, otp} = req.body; 
+  // const {userId, otp} = req.body; 
+
+
+    const {otp} = req.body;
+    const userId = req.user.id;
+
 
   if (!userId || !otp){
-    return res.json({success: true, message:"Missing Details"})
+    return res.json({success: false, message:"Missing Details"})
   }
 
   try {
@@ -188,6 +193,21 @@ export const verifyEmail = async (req, res)=>{
     user.verifyOtpExpireAt = 0;
 
     user.save();
+
+
+    // adding email message of verification
+    const mailOption = {
+      from: process.env.SENDER_EMAIL,
+      to: user.email,
+      subject:"Account Verification Successful",
+      text:`
+        Your email has been Successfully Verified. You are now ready to get started!
+      `
+    }
+
+    await transporter.sendMail(mailOption);
+    
+
     return res.json({success:true, message:"Email Verified Successfully !"})
 
 
