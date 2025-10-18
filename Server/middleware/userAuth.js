@@ -1,5 +1,8 @@
 import jwt from 'jsonwebtoken';
 
+
+// Take Token from client convert it into userId 
+
 const userAuth = async (req, res, next)=>{
 
     const {token} = req.cookies; 
