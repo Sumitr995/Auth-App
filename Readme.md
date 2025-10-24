@@ -127,5 +127,7 @@ Licensed under the **MIT License** — you’re free to use, modify, or extend t
 ---
 
 **Status:** 🚧 *Under Development (Frontend in Progress)*
+
 **Stack:** MERN
+
 **Author:** Sumit Rathod
