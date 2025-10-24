@@ -1,35 +1,60 @@
 # 🔐 Auth App — MERN Authentication System
 
 > 🚧 **Project Status:** *UNDER ACTIVE DEVELOPMENT*
-> 🧩 Backend Completed | 🎨 Frontend (React) In Progress
+> 🧩 **Backend Completed | Frontend (React) In Progress**
 
-A secure and scalable **Authentication System** built with the **MERN stack**, featuring user registration, login, logout, password reset, and email verification.
-This repo currently contains the **backend**, while the **frontend** is being developed and will be integrated soon.
+A secure and scalable **Authentication System** built using the **MERN stack**, featuring registration, login, password reset, and email verification.
+This repository currently contains the **completed backend**, while the **frontend** is actively being developed.
 
 ---
 
-## ⚡ Features (Backend Completed)
+
+
+## 🔄 Development Roadmap
+
+| Phase             |     Status     | Description                            |
+| ----------------- | :------------: | -------------------------------------- |
+| Backend API       |     ✅ Done     | Auth logic with JWT, email, and bcrypt |
+| Frontend Setup    | ⚙️ In Progress | React + Axios + Router + Toastify      |
+| Integration       |     🔜 Next    | Connect frontend with backend APIs     |
+| Role-Based Access |   🔜 Planned   | Admin/User control                     |
+| OAuth Login       |   🔜 Planned   | Google & GitHub authentication         |
+| 2FA Security      |   🔜 Planned   | Two-Factor Authentication              |
+
+
+---
+
+## ⚡ Backend Features (Completed)
 
 * 🧾 User Registration
 * 🔑 Login & Logout
 * 🛡️ JWT Authentication
 * 📧 Email Verification (via Nodemailer)
 * 🔁 Password Reset via Email
-* 🔒 Encrypted Passwords using bcryptjs
+* 🔒 Encrypted Passwords (bcryptjs)
+
+---
+
+## 🎨 Frontend (In Progress)
+
+* ⚙️ Built with **React.js**
+* 📡 API Calls handled by **Axios**
+* 🧭 Navigation via **React Router DOM**
+* 🔔 Notifications with **React-Toastify**
+* 🔐 Secure cookie-based JWT Auth Integration (in progress)
 
 ---
 
 ## 🧰 Tech Stack
 
-| Purpose        | Library / Framework           |
-| -------------- | ----------------------------- |
-| Server         | Node.js, Express.js           |
-| Database       | MongoDB + Mongoose            |
-| Authentication | JSON Web Token (JWT)          |
-| Security       | bcryptjs, cookie-parser, cors |
-| Email Service  | Nodemailer                    |
-| Config         | dotenv                        |
-| Dev Tool       | nodemon                       |
+| Layer                      | Libraries / Frameworks                            |
+| :------------------------- | :------------------------------------------------ |
+| **Backend**                | Node.js, Express.js, MongoDB, Mongoose            |
+| **Auth & Security**        | JWT, bcryptjs, cookie-parser, cors                |
+| **Email Service**          | Nodemailer                                        |
+| **Configuration**          | dotenv                                            |
+| **Dev Tools**              | nodemon                                           |
+| **Frontend (In Progress)** | React.js, Axios, React Router DOM, React-Toastify |
 
 ---
 
@@ -50,8 +75,9 @@ This repo currently contains the **backend**, while the **frontend** is being de
 
 3. **Setup environment variables**
 
-   * Copy `.env.example` to `.env` and fill in your credentials.
-     *(Your actual `.env` file is ignored by Git for security.)*
+   * Copy `.env.example` → `.env`
+   * Add your private credentials
+     *(Note: `.env` is ignored by Git for security reasons)*
 
    Example:
 
@@ -83,39 +109,23 @@ This repo currently contains the **backend**, while the **frontend** is being de
 ```
 auth-app/
 │
-├── controllers/     # Request logic
-├── models/          # MongoDB schemas
-├── routes/          # Express routes
-├── middleware/      # JWT auth & error handlers
-├── utils/           # Email and token helpers
-├── .env.example     # Example environment file
-├── server.js        # App entry point
+├── controllers/     # Route logic & handling
+├── models/          # Mongoose schemas
+├── routes/          # Express API routes
+├── middleware/      # Auth & error middleware
+├── utils/           # Email, JWT helper functions
+├── .env.example     # Example env file (safe)
+├── server.js        # Main server entry point
 └── package.json
 ```
 
----
-
-## 🔄 Development Roadmap
-
-| Phase             |     Status     | Description                     |
-| ----------------- | :------------: | ------------------------------- |
-| Backend API       |     ✅ Done     | Authentication logic completed  |
-| Frontend UI       | 🧠 In Progress | React + Axios + JWT Integration |
-| Role-Based Access |   🔜 Planned   | Admin/User access control       |
-| OAuth Login       |   🔜 Planned   | Google & GitHub Authentication  |
-| 2FA Security      |   🔜 Planned   | Two-Factor Authentication       |
-
----
 
 ## 📜 License
 
-Licensed under the **MIT License**.
-You can use, modify, or extend this project freely.
+Licensed under the **MIT License** — you’re free to use, modify, or extend this project.
 
 ---
 
 **Status:** 🚧 *Under Development (Frontend in Progress)*
-
 **Stack:** MERN
-
 **Author:** Sumit Rathod
